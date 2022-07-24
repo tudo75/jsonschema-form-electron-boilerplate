@@ -4,9 +4,9 @@
 */
 
 import React from 'react';
-import { render } from 'react-dom';
+import { createRoot } from 'react-dom/client';
 
-import Form from 'react-jsonschema-form';
+import Form from '@rjsf/core';
 
 const schema = {
   title: 'Sample JSON-schema-form',
@@ -20,11 +20,12 @@ const schema = {
 
 const log = (type) => console.log.bind(console, type);
 
-render((
+const root = createRoot(document.getElementById('root'));
+root.render(
   <Form
     schema = { schema }
     onChange = { log('changed') }
     onSubmit = { log('submitted') }
     onError = { log('errors') }
   />
-), document.getElementById('root'));
+);

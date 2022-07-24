@@ -1,8 +1,8 @@
 module.exports = {
-    mode: 'production',
+    mode: 'development',
     entry: '/src/index.js',   // entry point into the application and start of dependency graph
     output: {
-        filename: './src/index.bundle.js',
+        filename: '../src/index.bundle.js',
         libraryTarget: 'commonjs2',
     },
     resolve: {
